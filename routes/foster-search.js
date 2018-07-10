@@ -9,7 +9,6 @@ router.get('/', (request, response) => {
       let fosterIDs = fosterData.map(eachFoster => {
         return eachFoster.id
       })
-      // console.log(fosterData);
       queries.getKittensForFosters(fosterIDs)
         .then(kittenData => {
           console.log(kittenData);
@@ -20,20 +19,6 @@ router.get('/', (request, response) => {
             }
           )
         })
-
-
-
-      // queries.getKittensForFosters(fosterIDs)
-      //   .then(kittens => {
-      //     fosterData.forEach(foster => {
-      //       foster.kittens = kittens.filter(kitten => {
-      //         return kitten.foster_id == foster.id
-      //       })
-      //     })
-      //     console.log(fosterData);
-      //     response.json({'results': fosterData})
-      //   })
-
     })
 })
 
